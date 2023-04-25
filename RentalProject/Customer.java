@@ -42,6 +42,16 @@ public class Customer {
         return rentals;
     }
 
+    public void addRental(Rental rental){
+        this.rentals.add(rental);
+    }
+    
+    public void removeRental(Rental rental){
+        this.rentals.remove(rental);
+    }
+        
+    
+
 
 
 }

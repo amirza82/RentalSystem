@@ -1,5 +1,6 @@
 package RentalProject;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +15,13 @@ public class Rental {
         this.movie = movie;
         this.customer = customer;
         this.rentalID = rentalID;
+        this.rentalDate = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(rentalDate);
+        c.add(Calendar.DATE, 14);
+        this.returnDate = c.getTime();
+        movie.setAvailable(false);
+        
     }
 
     public Integer getRentalID() {
