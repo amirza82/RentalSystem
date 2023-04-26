@@ -26,7 +26,7 @@ public class RentalStore {
     public void rentMovie(Movie movie, Customer customer){
         if (availableMoviesList.contains(movie) && customerList.contains(customer)) {
 
-            customer.addRental(new Rental(movie, customer, null));
+            customer.addRental(new Rental(movie, customer));
             availableMoviesList.remove(movie);
 
         }else if(availableMoviesList.contains(movie)){

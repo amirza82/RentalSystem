@@ -11,17 +11,17 @@ public class Rental {
     private Date returnDate;
     private Integer rentalID;
 
-    public Rental(Movie movie, Customer customer, Integer rentalID) {
+    public Rental(Movie movie, Customer customer) {
+
         this.movie = movie;
         this.customer = customer;
-        this.rentalID = rentalID;
+        this.rentalID =Integer.parseInt(movie.getMovieID().toString() + customer.getCustomerID().toString());
         this.rentalDate = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(rentalDate);
         c.add(Calendar.DATE, 14);
         this.returnDate = c.getTime();
         movie.setAvailable(false);
-        
     }
 
     public Integer getRentalID() {
