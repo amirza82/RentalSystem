@@ -5,31 +5,31 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class Rental {
-    private Movie movie;
+    private Item item;
     private Customer customer;
     private Date rentalDate;
     private Date returnDate;
     private Integer rentalID;
 
-    public Rental(Movie movie, Customer customer) {
+    public Rental(Item item, Customer customer) {
 
-        this.movie = movie;
+        this.item = item;
         this.customer = customer;
-        this.rentalID =Integer.parseInt(movie.getMovieID().toString() + customer.getCustomerID().toString());
+        this.rentalID =Integer.parseInt(item.getID().toString() + customer.getCustomerID().toString());
         this.rentalDate = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(rentalDate);
         c.add(Calendar.DATE, 14);
         this.returnDate = c.getTime();
-        movie.setAvailable(false);
+        item.setAvailable(false);
     }
 
     public Integer getRentalID() {
         return rentalID;
     }
 
-    public Movie getMovie() {
-        return movie;
+    public Item getItem() {
+        return item;
     }
 
     public Customer getCustomer() {
