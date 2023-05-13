@@ -1,4 +1,4 @@
-package RentalProject;
+package com;
 
 import java.util.Date;
 
@@ -6,16 +6,17 @@ public class Item {
 
     private String title;
     private String genre;
-    private Integer ID;
+    private Integer id;
     private Date releaseDate;
-    private boolean isAvailable = true;
+    private boolean isAvailable;
 
 
-    public Item(String title, String genre, Integer ID, Date releaseDate){
+    public Item(String title, String genre, Integer id, Date releaseDate, boolean isAvailable){
         this.title = title;
         this.genre = genre;
-        this.ID = ID;
+        this.id = id;
         this.releaseDate = releaseDate;
+        this.isAvailable = isAvailable;
     }
 
     public String getTitle() {
@@ -27,7 +28,7 @@ public class Item {
     }
 
     public Integer getID() {
-        return ID;
+        return id;
     }
 
     public Date getReleaseDate() {
