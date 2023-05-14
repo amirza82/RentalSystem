@@ -310,26 +310,26 @@
 
   "customers": [
     {
-      "id": 1,
+      "customerID": 1,
       "name": "John Smith",
       "email": "johnsmith@example.com",
-      "phone": "1234567890",
+      "phoneNumber": "1234567890",
       "address": "123 Main Street",
       "rentals":null
     },
     {
-      "id": 2,
+      "customerID": 2,
       "name": "Emily Johnson",
       "email": "emilyjohnson@example.com",
-      "phone": "9876543210",
+      "phoneNumber": "9876543210",
       "address": "456 Oak Avenue",
       "rentals": null
     },
     {
-      "id": 3,
+      "customerID": 3,
       "name": "Michael Brown",
       "email": "michaelbrown@example.com",
-      "phone": "5555555555",
+      "phoneNumber": "5555555555",
       "address": "789 Elm Street",
       "rentals": null
     }
