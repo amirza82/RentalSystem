@@ -6,14 +6,14 @@ import java.sql.Date;
 public class Game extends Item{
     
     private String director;
-    private int gameRate;
+    private float gameRate;
     private String aboutGame;
     private String manufacturer;
 
     
 
     public Game(String title, String genre, Integer id, Date releaseDate, boolean isAvailable,
-            String director, int gameRate, String aboutGame, String manufacturer) {
+            String director, float gameRate, String aboutGame, String manufacturer) {
         super(title, genre, id, releaseDate, isAvailable);
         this.director = director;
         this.gameRate = gameRate;
@@ -25,7 +25,7 @@ public class Game extends Item{
         return director;
     }
 
-    public int getGameRate() {
+    public float getGameRate() {
         return gameRate;
     }
 

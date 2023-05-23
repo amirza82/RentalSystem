@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Rental {
     private Item item;
-    private Customer customer;
+    private Integer customerID;
     private Date rentalDate;
     private Date returnDate;
     private Integer rentalID;
@@ -15,7 +15,7 @@ public class Rental {
     public Rental(Item item, Customer customer) {
 
         this.item = item;
-        this.customer = customer;
+        this.customerID = customer.getCustomerID();
         this.rentalID =Integer.parseInt(item.getID().toString() + customer.getCustomerID().toString());
         this.rentalDate = new Date();
         Calendar c = Calendar.getInstance();
@@ -33,8 +33,8 @@ public class Rental {
         return item;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Integer getCustomerID() {
+        return customerID;
     }
 
     public Date getRentalDate() {

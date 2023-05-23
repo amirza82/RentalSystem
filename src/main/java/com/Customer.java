@@ -1,14 +1,15 @@
 package com;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
+    private int customerID;
     private String name;
     private String email;
     private String phoneNumber;
     private String address;
-    private Integer customerID;
     private List <Rental> rentals;
 
     public Customer(String name, String email, String phoneNumber, String address, Integer customerID) {
@@ -17,6 +18,7 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.customerID = customerID;
+        this.rentals = new ArrayList<Rental>();
     }
 
     public String getName() {

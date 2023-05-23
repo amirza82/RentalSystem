@@ -1,5 +1,5 @@
 {
-  "books": [
+  "Books": [
     {
       "id": 1,
       "title": "The Secret Garden",
@@ -102,7 +102,7 @@
     }
   ],
 
-  "games": [
+  "Games": [
     {
       "id": 1,
       "title": "The Legend of Zelda: Breath of the Wild",
@@ -215,7 +215,7 @@
     }
   ],
 
-  "movies": [
+  "Movies": [
     {
       "id": 1,
       "title": "Inception",
@@ -308,14 +308,14 @@
     }
   ],
 
-  "customers": [
+  "Customers": [
     {
       "customerID": 1,
       "name": "John Smith",
       "email": "johnsmith@example.com",
       "phoneNumber": "1234567890",
       "address": "123 Main Street",
-      "rentals":null
+      "rentals":[]
     },
     {
       "customerID": 2,
@@ -323,7 +323,7 @@
       "email": "emilyjohnson@example.com",
       "phoneNumber": "9876543210",
       "address": "456 Oak Avenue",
-      "rentals": null
+      "rentals": []
     },
     {
       "customerID": 3,
@@ -331,7 +331,7 @@
       "email": "michaelbrown@example.com",
       "phoneNumber": "5555555555",
       "address": "789 Elm Street",
-      "rentals": null
+      "rentals": []
     }
   ]
 }

@@ -5,13 +5,25 @@ import java.util.List;
 
 public class RentalStore {
 
-    private List <Game> availableGameslist;
+    private List <Game> availableGamesList;
     private List <Book> availableBooksList;
     private List <Movie> availableMoviesList;
     private List <Customer> customerList;
 
-    public RentalStore (){
-        System.out.println("RentalStore created");
+    public void setAvailableGamesList(List<Game> availableGamesList) {
+        this.availableGamesList = availableGamesList;
+    }
+
+    public void setAvailableBooksList(List<Book> availableBooksList) {
+        this.availableBooksList = availableBooksList;
+    }
+
+    public void setAvailableMoviesList(List<Movie> availableMoviesList) {
+        this.availableMoviesList = availableMoviesList;
+    }
+
+    public void setCustomerList(List<Customer> customerList) {
+        this.customerList = customerList;
     }
 
     public void register(Customer customer){
@@ -54,7 +66,7 @@ public class RentalStore {
         if (item instanceof Movie) {
             item.setAvailable(true);
             availableMoviesList.add((Movie) item);
-            rental.getCustomer().removeRental(rental);
+            this.getCustomerByID(rental.getCustomerID()).removeRental(rental);
         } else {
             throw new IllegalArgumentException("The rental item must be a movie.");
         }
@@ -73,24 +85,24 @@ public class RentalStore {
     //----------------- GAME STUFF -----------------------------------------
 
     public void addGame(Game game) {
-        availableGameslist.add(game);
+        availableGamesList.add(game);
     }
 
     public void removeGame(Game game){
-        availableGameslist.remove(game);
+        availableGamesList.remove(game);
     }
 
     public List<Game> getAvailableGamesList(){
-        return availableGameslist;
+        return availableGamesList;
     }
 
     public void rentGame(Game game, Customer customer){
-        if (availableGameslist.contains(game) && customerList.contains(customer)) {
+        if (availableGamesList.contains(game) && customerList.contains(customer)) {
 
             customer.addRental(new Rental(game, customer));
-            availableGameslist.remove(game);
+            availableGamesList.remove(game);
 
-        }else if (availableGameslist.contains(game)){
+        }else if (availableGamesList.contains(game)){
 
             System.out.println("you are not registered.");
 
@@ -104,15 +116,15 @@ public class RentalStore {
         Item item = rental.getItem();
         if (item instanceof Game) {
             item.setAvailable(true);
-            availableGameslist.add((Game) item);
-            rental.getCustomer().removeRental(rental);
+            availableGamesList.add((Game) item);
+            this.getCustomerByID(rental.getCustomerID()).removeRental(rental);
         } else {
             throw new IllegalArgumentException("The rental item most be game.");
         }
     }
 
     public Game getGameByID(Integer GameID){
-        for (Game game : availableGameslist) {
+        for (Game game : availableGamesList) {
             if (game.getID().equals(GameID)) {
 
                 return game;
@@ -150,7 +162,7 @@ public class RentalStore {
         Item item = rental.getItem();
         if (item instanceof Book) {
             item.setAvailable(true);
-            rental.getCustomer().removeRental(rental);
+            this.getCustomerByID(rental.getCustomerID()).removeRental(rental);
             availableBooksList.add((Book)rental.getItem());
         }else{
             throw new IllegalArgumentException("The rental item must be book.");
@@ -178,7 +190,9 @@ public class RentalStore {
         return null;
     }
 
-    
+    public List<Customer> getCustomerList(){
+        return customerList;
+    }
 
 
 
